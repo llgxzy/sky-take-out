@@ -49,7 +49,7 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             Long empId = Long.valueOf(claims.get(JwtClaimsConstant.EMP_ID).toString());
             log.info("当前员工id：", empId);
 
-            //将empId存储与ThreadLocal空间中，便于Service中新增员工时可以获取登录用户的id
+            //将empId存储于ThreadLocal空间中，便于Service中新增员工时可以获取登录用户的id
             BaseContext.setCurrentId(empId);
 
             //3、通过，放行
